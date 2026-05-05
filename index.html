@@ -5,185 +5,184 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BioSure Professional</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --bg:#FDF7F5;
   --pink:#F3A6B6;
-  --pink-soft:#F9D9E0;
   --text:#111;
   --muted:#666;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter;}
-body{background:var(--bg);color:var(--text);}
+body{background:var(--bg);}
 
 /* NAV */
 .nav{
-  display:flex;justify-content:space-between;
-  padding:16px 20px;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:15px 20px;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(10px);
+  position:sticky;top:0;
 }
+.logo img{height:26px;}
 
 /* HERO */
-.hero{
-  position:relative;padding:60px 20px;text-align:center;overflow:hidden;
-}
+.hero{text-align:center;padding:60px 20px;position:relative;}
 .hero::before{
-  content:"";position:absolute;width:420px;height:420px;
-  background:radial-gradient(circle,var(--pink-soft),transparent 70%);
-  filter:blur(60px);top:120px;left:50%;transform:translateX(-50%);
+  content:"";position:absolute;width:400px;height:400px;
+  background:radial-gradient(circle,#F9D9E0,transparent);
+  filter:blur(60px);
+  top:100px;left:50%;transform:translateX(-50%);
 }
 
-/* GLASS */
-.glass{
-  position:absolute;left:50%;top:180px;transform:translateX(-50%);
-  width:260px;height:260px;border-radius:30px;
-  background:rgba(255,255,255,0.4);
-  backdrop-filter:blur(18px);
+/* PREMIUM TITLE */
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:40px;
+  font-weight:700;
+  letter-spacing:1px;
 }
 
-/* TEXT */
-.hero h1{font-size:42px;line-height:1;}
 .hero p{color:var(--muted);margin-top:8px;}
 
-/* PRODUCT */
-.product{margin-top:30px;position:relative;z-index:2;}
 .product img{
-  width:240px;
-  transform:rotateX(6deg) rotateY(-6deg);
-  animation:float 6s ease-in-out infinite;
+  width:240px;margin-top:30px;
   filter:drop-shadow(0 30px 50px rgba(0,0,0,0.25));
-}
-@keyframes float{
-  0%,100%{transform:translateY(0) rotateX(6deg) rotateY(-6deg);}
-  50%{transform:translateY(-20px) rotateX(6deg) rotateY(-6deg);}
 }
 
 /* CTA */
 .btn{
-  display:inline-block;margin-top:20px;padding:14px 28px;
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 28px;
   background:linear-gradient(135deg,#F3A6B6,#ff6f91);
-  color:#fff;border-radius:8px;text-decoration:none;font-weight:600;
+  color:#fff;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  border:none;
 }
 
-/* TRUST */
-.trust{font-size:13px;color:var(--muted);margin-top:10px;}
-
-/* SCROLLING PROOF */
-.ticker{
-  overflow:hidden;background:#fff;padding:10px 0;margin-top:20px;
-  border-top:1px solid #eee;border-bottom:1px solid #eee;
-}
-.ticker-track{
-  display:flex;gap:40px;animation:scroll 18s linear infinite;
-  font-size:13px;color:#555;
-}
+/* TICKER */
+.ticker{overflow:hidden;background:#fff;padding:10px;margin-top:20px;}
+.track{display:flex;gap:40px;animation:scroll 18s linear infinite;}
 @keyframes scroll{
   0%{transform:translateX(0);}
   100%{transform:translateX(-50%);}
 }
 
 /* SECTION */
-.section{padding:70px 20px;text-align:center;}
-h2{font-size:26px;}
-p{color:var(--muted);}
-
-/* GRID */
+.section{padding:60px 20px;text-align:center;}
 .grid{display:grid;gap:15px;margin-top:20px;}
-.card{background:#fff;padding:16px;border-radius:10px;}
+.card{background:#fff;padding:15px;border-radius:10px;}
 
-/* IMAGE */
-.image img{width:100%;border-radius:12px;}
+.image img{width:100%;border-radius:10px;}
 
 /* PRICING */
 .pricing{max-width:500px;margin:auto;}
-.price{
-  display:flex;justify-content:space-between;
-  padding:12px 0;border-bottom:1px solid #eee;
-}
+.price{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee;}
+
 .highlight{
-  background:#fff;border:2px solid var(--pink);
-  padding:12px;border-radius:10px;margin:10px 0;
+  border:2px solid var(--pink);
+  padding:12px;
+  border-radius:10px;
+  margin:10px 0;
 }
 
 /* FORM */
-.form{margin-top:30px;}
 input,select{
-  width:100%;padding:12px;margin-top:10px;border:1px solid #ddd;
-}
-
-/* STICKY CTA */
-.sticky{
-  position:fixed;bottom:0;width:100%;background:#fff;
-  padding:10px;border-top:1px solid #eee;
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:1px solid #ddd;
 }
 
 /* WHATSAPP */
 .whatsapp{
-  position:fixed;right:15px;bottom:70px;
-  background:#25D366;color:#fff;padding:14px;border-radius:50%;
+  position:fixed;
+  right:15px;
+  bottom:70px;
+  background:#25D366;
+  color:#fff;
+  padding:14px;
+  border-radius:50%;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
-<div>BioSure</div>
-<div>Premium Skin</div>
+<div class="logo"><img src="logo.png"></div>
+<div style="font-size:12px;color:#666;">Dermatology Inspired</div>
 </div>
 
+<!-- HERO -->
 <section class="hero">
-<div class="glass"></div>
 
-<h1>PURE<br>GLOW</h1>
-<p>L-Glutathione + Vitamin C Formula</p>
+<h1 class="hero-title">L-Glutathione</h1>
+<p>Advanced Skin Brightening Effervescent Formula</p>
 
 <div class="product">
 <img src="product.png">
 </div>
 
-<div class="trust">
+<p style="font-size:13px;margin-top:10px;color:#666;">
 ✔ 10,000+ Users • ✔ Clinically Inspired • ✔ Safe
-</div>
+</p>
 
 <a href="#order" class="btn">Shop Now</a>
+
 </section>
 
-<!-- SCROLLING SOCIAL PROOF -->
+<!-- TICKER -->
 <div class="ticker">
-<div class="ticker-track">
-<span>Priya from Delhi purchased</span>
-<span>Rahul from Mumbai purchased</span>
-<span>Sneha from Pune purchased</span>
-<span>Neha from Jaipur purchased</span>
-<span>Amit from Indore purchased</span>
-<span>Priya from Delhi purchased</span>
-<span>Rahul from Mumbai purchased</span>
+<div class="track">
+<span>Priya ordered</span>
+<span>Rahul purchased</span>
+<span>Sneha purchased</span>
+<span>Amit ordered</span>
+<span>Neha purchased</span>
 </div>
 </div>
 
-<section class="section">
-<h2>Still Facing Dull Skin?</h2>
-<p>External creams fix surface. Real glow comes from within.</p>
-</section>
-
+<!-- BENEFITS -->
 <section class="section">
 <h2>Why It Works</h2>
 <div class="grid">
-<div class="card">Bright Skin Tone</div>
+<div class="card">Brightens Skin Tone</div>
 <div class="card">Reduces Pigmentation</div>
 <div class="card">Boosts Hydration</div>
 <div class="card">Supports Skin Health</div>
 </div>
 </section>
 
+<!-- INGREDIENTS -->
+<section class="section">
+<h2>Advanced Formula</h2>
+<p>L-Glutathione, Vitamin C, Collagen, Zinc, Selenium</p>
+</section>
+
+<!-- HOW TO USE -->
+<section class="section">
+<h2>How to Use</h2>
+<div class="grid">
+<div class="card">Drop tablet in water</div>
+<div class="card">Let dissolve</div>
+<div class="card">Drink daily</div>
+</div>
+</section>
+
+<!-- RESULTS -->
 <section class="section image">
 <h2>Visible Results</h2>
 <img src="beforeafter.jpg">
 </section>
 
+<!-- REVIEWS -->
 <section class="section image">
 <h2>Customer Reviews</h2>
 <div class="grid">
@@ -193,58 +192,69 @@ input,select{
 </div>
 </section>
 
+<!-- PRICING -->
 <section id="order" class="section">
 <h2>Choose Your Pack</h2>
 
 <div class="pricing">
 
 <div class="price">
-<span>Trial</span>
-<span><del>₹599</del> ₹325</span>
-</div>
-
-<div class="price">
-<span>Popular</span>
-<span><del>₹999</del> ₹600</span>
+<span>20 Tablets<br><small><del>₹1575</del></small></span>
+<span><strong>₹600</strong></span>
 </div>
 
 <div class="highlight">
 <div class="price">
-<span><strong>Best Seller 🔥</strong></span>
-<span><strong><del>₹1599</del> ₹1100</strong></span>
+<span>🔥 40 Tablets<br><small><del>₹3150</del></small></span>
+<span><strong>₹1100</strong></span>
 </div>
-<p style="font-size:12px;">Most chosen for visible results</p>
+<p style="font-size:12px;">Most Recommended</p>
 </div>
 
 <div class="price">
-<span>Best Value</span>
-<span><del>₹1999</del> ₹1500</span>
+<span>60 Tablets<br><small><del>₹4725</del></small></span>
+<span><strong>₹1500</strong></span>
 </div>
 
 </div>
 
+<!-- FORM -->
 <div class="form">
-<input type="text" placeholder="Full Name">
-<input type="tel" placeholder="Phone">
-<input type="text" placeholder="Address">
+<input id="name" placeholder="Name">
+<input id="phone" placeholder="Phone">
+<input id="address" placeholder="Address">
 
-<select>
+<select id="pack">
 <option>Select Pack</option>
-<option>Trial</option>
-<option>Popular</option>
-<option selected>Best Seller</option>
-<option>Best Value</option>
+<option>20 Tablets - ₹600</option>
+<option selected>40 Tablets - ₹1100</option>
+<option>60 Tablets - ₹1500</option>
 </select>
 
-<a href="https://wa.me/917863835549" class="btn">Order Now</a>
+<button class="btn" onclick="order()">Order Now</button>
 </div>
+
 </section>
 
-<div class="sticky">
-<a href="#order" class="btn" style="width:100%;text-align:center;">Buy Now</a>
-</div>
+<a href="#" class="whatsapp" onclick="order()">💬</a>
 
-<a href="https://wa.me/917863835549" class="whatsapp">💬</a>
+<script>
+function order(){
+let n=document.getElementById("name").value;
+let p=document.getElementById("phone").value;
+let a=document.getElementById("address").value;
+let pack=document.getElementById("pack").value;
+
+if(!n||!p||!a||pack==="Select Pack"){
+alert("Fill all details");
+return;
+}
+
+let msg="New Order\nName:"+n+"\nPhone:"+p+"\nPack:"+pack+"\nAddress:"+a;
+
+window.open("https://wa.me/917863835549?text="+encodeURIComponent(msg));
+}
+</script>
 
 </body>
 </html>
