@@ -9,80 +9,85 @@
 
 <style>
 :root{
-  --bg:#F5F7FA;
-  --text:#0F172A;
-  --muted:#6B7280;
-  --accent:#E8A7B3;
+  --bg:#FDF7F5;
+  --pink:#F3B6C3;
+  --pink-soft:#F9D9E0;
+  --text:#1A1A1A;
+  --muted:#6B6B6B;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter;}
 body{background:var(--bg);color:var(--text);overflow-x:hidden;}
 
-.container{max-width:1200px;margin:auto;padding:20px;}
-
 /* NAV */
 .nav{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  padding:10px 0;
-}
-.nav a{
-  text-decoration:none;
-  margin-right:20px;
-  color:var(--muted);
+  padding:20px;
+  max-width:1200px;
+  margin:auto;
   font-size:14px;
 }
 
 /* HERO */
 .hero{
   position:relative;
-  height:85vh;
+  height:90vh;
   display:flex;
+  justify-content:center;
   align-items:center;
+  text-align:center;
 }
 
+/* SOFT BACKGROUND GLOW */
+.hero::before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle, var(--pink-soft), transparent 70%);
+  z-index:0;
+}
+
+/* TEXT */
 .hero-text{
   position:absolute;
   z-index:1;
+  top:10%;
 }
 
 .hero-text h1{
-  font-size:80px;
+  font-size:90px;
+  letter-spacing:-3px;
   font-weight:600;
-  line-height:0.9;
-  letter-spacing:-2px;
 }
 
-.hero-text span{
-  display:block;
-  font-size:22px;
+.hero-text p{
+  margin-top:10px;
   color:var(--muted);
-  margin-bottom:10px;
 }
 
+/* PRODUCT */
 .hero img{
-  position:absolute;
-  right:10%;
-  width:350px;
-  transform:rotate(-10deg);
-  animation:float 4s ease-in-out infinite;
+  position:relative;
+  z-index:2;
+  width:380px;
+  animation:float 5s ease-in-out infinite;
 }
 
 /* FLOAT ANIMATION */
 @keyframes float{
-  0%,100%{transform:translateY(0) rotate(-10deg);}
-  50%{transform:translateY(-20px) rotate(-10deg);}
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-25px);}
 }
 
 /* CTA */
 .btn{
-  margin-top:20px;
   display:inline-block;
+  margin-top:20px;
   padding:12px 28px;
   border:1px solid var(--text);
   text-decoration:none;
-  font-size:14px;
   transition:0.3s;
 }
 .btn:hover{
@@ -92,18 +97,16 @@ body{background:var(--bg);color:var(--text);overflow-x:hidden;}
 
 /* SECTION */
 .section{
-  padding:100px 0;
+  padding:100px 20px;
   text-align:center;
 }
+.container{
+  max-width:1100px;
+  margin:auto;
+}
 
-h2{
-  font-size:32px;
-  margin-bottom:10px;
-}
-p{
-  color:var(--muted);
-  font-size:15px;
-}
+h2{font-size:32px;}
+p{color:var(--muted);}
 
 /* GRID */
 .grid{
@@ -114,30 +117,35 @@ p{
 .cards{
   grid-template-columns:repeat(2,1fr);
 }
-
 .card{
   background:#fff;
   padding:20px;
-  border-radius:8px;
+  border-radius:10px;
 }
 
 /* IMAGE */
 .image img{
   width:100%;
-  border-radius:10px;
+  border-radius:12px;
 }
 
 /* PRICING */
 .pricing{
   max-width:600px;
   margin:auto;
-  text-align:left;
 }
 .price{
   display:flex;
   justify-content:space-between;
   padding:15px 0;
   border-bottom:1px solid #eee;
+}
+
+.highlight{
+  background:#fff;
+  border:2px solid var(--pink);
+  padding:15px;
+  border-radius:10px;
 }
 
 /* FORM */
@@ -160,58 +168,58 @@ input,select{
   color:#fff;
   padding:14px;
   border-radius:50%;
-  text-decoration:none;
 }
 
 @media(max-width:768px){
-  .hero-text h1{font-size:50px;}
-  .hero img{width:250px;right:5%;}
+  .hero-text h1{font-size:55px;}
+  .hero img{width:260px;}
   .cards{grid-template-columns:1fr;}
 }
 </style>
+
 </head>
 
 <body>
 
 <!-- NAV -->
-<div class="container nav">
+<div class="nav">
 <div><strong>BioSure</strong></div>
-<div>
-<a href="#">Home</a>
-<a href="#">Products</a>
-<a href="#">Contact</a>
-</div>
+<div>Premium Skin Formula</div>
 </div>
 
 <!-- HERO -->
-<section class="container hero">
+<section class="hero">
 
 <div class="hero-text">
-<span>Advanced Skin Formula</span>
 <h1>PURE<br>GLOW</h1>
-<p>Internal skin care with L-Glutathione & Vitamin C</p>
-
-<a href="#order" class="btn">Explore</a>
+<p>L-Glutathione + Vitamin C Formula</p>
+<a href="#order" class="btn">Shop Now</a>
 </div>
 
-<img src="product.png" alt="product">
+<img src="product.png">
 
+</section>
+
+<!-- PROBLEM -->
+<section class="section">
+<div class="container">
+<h2>Still Facing Dull Skin?</h2>
+<p>External creams only fix surface. Your skin needs internal care.</p>
+</div>
 </section>
 
 <!-- BENEFITS -->
 <section class="section">
 <h2>Why It Works</h2>
-
 <div class="container grid cards">
 <div class="card">Brightens Skin Tone</div>
 <div class="card">Reduces Pigmentation</div>
 <div class="card">Boosts Hydration</div>
 <div class="card">Supports Skin Health</div>
 </div>
-
 </section>
 
-<!-- BEFORE AFTER -->
+<!-- RESULT -->
 <section class="section image">
 <h2>Visible Results</h2>
 <div class="container">
@@ -231,7 +239,7 @@ input,select{
 
 <!-- PRICING -->
 <section id="order" class="section">
-<h2>Select Pack</h2>
+<h2>Choose Your Pack</h2>
 
 <div class="pricing">
 
@@ -245,9 +253,12 @@ input,select{
 <span>₹600</span>
 </div>
 
+<div class="highlight">
 <div class="price">
-<span>Recommended Pack</span>
-<span>₹1100</span>
+<span><strong>Best Seller</strong></span>
+<span><strong>₹1100</strong></span>
+</div>
+<p style="font-size:12px;">Most recommended for visible results</p>
 </div>
 
 <div class="price">
@@ -267,11 +278,11 @@ input,select{
 <option>Select Pack</option>
 <option>Trial</option>
 <option>Popular</option>
-<option>Recommended</option>
+<option selected>Best Seller</option>
 <option>Best Value</option>
 </select>
 
-<a href="https://wa.me/917863835549" class="btn">Order on WhatsApp</a>
+<a href="https://wa.me/917863835549" class="btn">Order Now</a>
 </div>
 
 </section>
